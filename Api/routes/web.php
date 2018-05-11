@@ -15,7 +15,9 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('hello','HelloWorldController@show');
+$router->get('/programs', 'ProgramController@show');
 
-$router->get('info','PhpInfoController@show');
+$router->get('/programs/{id}', 'ProgramController@showOne');
+
+$router->get('/info', 'PhpInfoController@show');
 
