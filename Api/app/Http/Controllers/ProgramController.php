@@ -51,7 +51,7 @@ class ProgramController extends Controller
 
     public function showOne($id)
     {
-        $programs=Program::with('songs','program_type','game_genre')
+        $programs=Program::with('program_type','game_genre','songs')
                    ->where('id',$id)
                    ->get();
 
