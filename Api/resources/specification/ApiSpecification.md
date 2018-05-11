@@ -202,7 +202,7 @@ other_title_01|string|番組タイトル予備枠02|""|
 anisoninfo_program_id|Number|[AnisonGeneration](http://http://anison.info/ "AnisonGeneration")上の管理番号|13401
 broadcast_start_on|Date|放送開始年月日(yyyy-MM-dd)ゲームの場合は発売日、劇場版の場合は公開日|"2011-04-06"|
 program_type|program_type|番組種別|{"id":2,"code":"TV","name":"テレビアニメーション"}|
-game_genre|game_genre|ゲームのジャンル種別。ゲーム以外の場合も該当なしのデータが入る|{"id":1,"name":""}|
+game_genre|game_genre|ゲームのジャンル種別|{"id":1,"name":""}|
 
 ####program_type
 #####概要
@@ -219,7 +219,7 @@ name|string|番組種別名称|テレビアニメーション
 ####game_genre
 #####概要
 - ゲームのジャンル種別（RPG、アクション、アドベンチャーなど）
-- 番組種別がゲームでない場合は
+- 番組種別がゲームでない場合は該当なしのデータが入る
 
 #####Model
 |Property|Value|description|Sample
