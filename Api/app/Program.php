@@ -11,6 +11,8 @@ class Program extends Model
     
     protected $table = 'programs';
 
+    protected $hidden = ['game_genre_id','program_type_id','created_at','updated_at'];
+
     public $timestamps = false;
 
     public function scopeRecent($query)
