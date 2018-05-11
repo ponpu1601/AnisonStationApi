@@ -137,6 +137,15 @@ $ curl http://2ndrelaypumpstation.com/Api/v1/programs/7590
         "other_title_02": "",
         "anisoninfo_program_id": 13401,
         "broadcast_start_on": "2011-04-06",
+        "program_type": {
+            "id": 2,
+            "code": "TV",
+            "name": "テレビアニメーション"
+        },
+        "game_genre": {
+            "id": 1,
+            "name": ""
+        },
         "songs": [
             {
                 "id": 23825,
@@ -168,16 +177,7 @@ $ curl http://2ndrelaypumpstation.com/Api/v1/programs/7590
                 "anisoninfo_song_id": 67989,
                 "released_on": "0000-00-00"
             }
-        ],
-        "program_type": {
-            "id": 2,
-            "code": "TV",
-            "name": "テレビアニメーション"
-        },
-        "game_genre": {
-            "id": 1,
-            "name": ""
-        }
+        ]
     }
 ]
 
@@ -194,15 +194,15 @@ $ curl http://2ndrelaypumpstation.com/Api/v1/programs/7590
 #####Model
 |Property|Value|description|Sample
 |-|-|-|-|
-id|Number|program_id|6
-title|string|番組タイトル||
-kana_title|string|番組タイトルの読み仮名|
-other_title_01|string|番組タイトル予備枠01||
-other_title_01|string|番組タイトル予備枠02||
-program_type|program_type|番組種別||
-game_genre|game_genre|ゲームのジャンル種別。ゲーム以外の場合も該当なしのデータが入る||
-anisoninfo_program_id|Number|[AnisonGeneration](http://http://anison.info/ "AnisonGeneration")上の管理番号|
-broadcast_start_on|Date|放送開始年月日(yyyy-MM-dd)ゲームの場合は発売日、劇場版の場合は公開日||
+id|Number|program_id|7590
+title|string|番組タイトル|"Steins;Gate"|
+kana_title|string|番組タイトルの読み仮名|"シュタインズゲート"
+other_title_01|string|番組タイトル予備枠01|""|
+other_title_01|string|番組タイトル予備枠02|""|
+anisoninfo_program_id|Number|[AnisonGeneration](http://http://anison.info/ "AnisonGeneration")上の管理番号|13401
+broadcast_start_on|Date|放送開始年月日(yyyy-MM-dd)ゲームの場合は発売日、劇場版の場合は公開日|"2011-04-06"|
+program_type|program_type|番組種別|{"id":2,"code":"TV","name":"テレビアニメーション"}|
+game_genre|game_genre|ゲームのジャンル種別。ゲーム以外の場合も該当なしのデータが入る|{"id":1,"name":""}|
 
 ####program_type
 #####概要
@@ -211,9 +211,9 @@ broadcast_start_on|Date|放送開始年月日(yyyy-MM-dd)ゲームの場合は�
 #####Model
 |Property|Value|description|Sample
 |-|-|-|-|
-id|Number|program_type_id|6
-code|string|番組種別コード|
-name|string|番組種別名称|
+id|Number|program_type_id|2
+code|string|番組種別コード|TV
+name|string|番組種別名称|テレビアニメーション
 
 
 ####game_genre
@@ -225,7 +225,7 @@ name|string|番組種別名称|
 |Property|Value|description|Sample
 |-|-|-|-|
 id|Number|game_genre_id|6
-name|string|ゲームジャンル名称|
+name|string|ゲームジャンル名称|アドベンチャー
 
 ####song
 #####概要
@@ -234,12 +234,12 @@ name|string|ゲームジャンル名称|
 #####Model
 |Property|Value|description|Sample
 |-|-|-|-|
-id|Number|song_id|1000
-title|string|楽曲タイトル||
-anisoninfo_song_id|Number|[AnisonGeneration](http://http://anison.info/ "AnisonGeneration")上の管理番号||
-singer|singer|歌手||
-program|program|タイアップ番組のデータ|
-song_role|song_role|楽曲の役割(OP、EDなど)||
+id|Number|song_id|23825
+title|string|楽曲タイトル|"Hacking to the Gate"|
+anisoninfo_song_id|Number|[AnisonGeneration](http://http://anison.info/ "AnisonGeneration")上の管理番号|67986|
+singer|singer|歌手データ|{"id":3363,"name":"いとうかなこ"}|
+program|program|タイアップ番組のデータ|レスポンス例を参照のこと
+song_role|song_role|楽曲の役割(OP、EDなど)|{"id":1,"code":"OP","name":"オープニングテーマ"}|
 
 ####singer
 #####概要
@@ -248,8 +248,8 @@ song_role|song_role|楽曲の役割(OP、EDなど)||
 #####Model
 |Property|Value|description|Sample
 |-|-|-|-|
-id|Number|song_id|1000
-name|string|歌手名||
+id|Number|song_id|3363
+name|string|歌手名|いとうかなこ|
 
 ####song_role
 #####概要
@@ -259,5 +259,5 @@ name|string|歌手名||
 |Property|Value|description|Sample
 |-|-|-|-|
 id|Number|song_id|1
-code|string|楽曲の役割種別コード|
-name|string|楽曲の役割種別名称||
+code|string|楽曲の役割種別コード|OP
+name|string|楽曲の役割種別名称|オープニングテーマ|
