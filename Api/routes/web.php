@@ -12,7 +12,9 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    $readme = file_get_contents(__DIR__.'../../resources/specification/ApiSpecification.md');
+    $parser = new \cebe\markdown\GithubMarkdown();
+    echo $parser->parse($readme);
 });
 
 $router->get('/programs', 'ProgramController@show');
