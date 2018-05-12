@@ -11,7 +11,17 @@ class Song extends Model
     
     protected $table = 'songs';
 
-    protected $hidden = ['song_role_id','singer_id','program_id','released_on','created_at','updated_at'];
+    protected $hidden = [
+        'kana_title',
+        'other_title_01',
+        'other_title_02',
+        'song_role_id',
+        'singer_id',
+        'program_id',
+        'released_on',
+        'created_at',
+        'updated_at'
+    ];
 
     public $timestamps = false;
 
