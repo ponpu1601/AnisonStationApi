@@ -51,11 +51,11 @@ class ProgramController extends Controller
 
     public function showOne($id)
     {
-        $programs=Program::with('program_type','game_genre','songs')
+        $program=Program::with('program_type','game_genre','songs')
                    ->where('id',$id)
                    ->get();
 
-        return $this->respondWithJson($programs);
+        return $this->respondWithJson($program);
     }
     
 
