@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 
 
-class SongRple extends Model 
+class SongRole extends Model 
 {
     
     protected $table = 'song_roles';
