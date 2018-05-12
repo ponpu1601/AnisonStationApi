@@ -9,7 +9,7 @@
 
 ##APIリファレンス
 ###Endpoint
-####**`http://2ndrelaypumpstation.com/Api/v1`**
+####**`http://2ndrelaypumpstation.net/Api/v1`**
 
 ###認証
 v1では認証は行わない
@@ -28,7 +28,7 @@ v1では認証は行わない
 ####Response例
 ```json
 
-$ curl http://2ndrelaypumpstation.com/Api/v1/programs
+$ curl http://2ndrelaypumpstation.net/Api/v1/programs
 
 [
     {
@@ -77,7 +77,7 @@ $ curl http://2ndrelaypumpstation.com/Api/v1/programs
 ####Response例
 
 ```json
-$ curl http://2ndrelaypumpstation.com/Api/v1/programs?title=steins
+$ curl http://2ndrelaypumpstation.net/Api/v1/programs?title=steins
 
 [
     {
@@ -126,7 +126,7 @@ $ curl http://2ndrelaypumpstation.com/Api/v1/programs?title=steins
 
 ####Response例
 ```json
-$ curl http://2ndrelaypumpstation.com/Api/v1/programs/7590
+$ curl http://2ndrelaypumpstation.net/Api/v1/programs/7590
 [
     {
         "id": 7590,
