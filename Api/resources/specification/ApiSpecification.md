@@ -1,10 +1,10 @@
 #AnisonStationApiについて
 
 ##API使用上の注意
-###本API公開に当たって、[AnisonGeneration様](http://http://anison.info/ "AnisonGeneration")が公開されている[csvデータ](http://http://anison.info/data/download.html)を使用しています。
+###本API公開に当たって、[AnisonGeneration様](http://anison.info/ "AnisonGeneration")が公開されている[csvデータ](http://anison.info/data/download.html)を使用しています。
 - 本APIのデータの二次利用につきましてはAnisonGeneration様の規約に従ってご利用ください。
 - AnisonGeneration様では、各種データを募集しています。ユーザー登録をすることで、各データの追加をすることができます。
-- データに誤りがある場合は、[AnisonGeneration様情報修正掲示板](http://http://bbs.anison.info/)へご連絡ください。
+- データに誤りがある場合は、[AnisonGeneration様情報修正掲示板](http://bbs.anison.info/)へご連絡ください。
 
 
 ##APIリファレンス
@@ -127,7 +127,6 @@ $ curl http://2ndrelaypumpstation.com/Api/v1/programs?title=steins
 ####Response例
 ```json
 $ curl http://2ndrelaypumpstation.com/Api/v1/programs/7590
-
 [
     {
         "id": 7590,
@@ -151,31 +150,71 @@ $ curl http://2ndrelaypumpstation.com/Api/v1/programs/7590
                 "id": 23825,
                 "title": "Hacking to the Gate",
                 "anisoninfo_song_id": 67986,
-                "released_on": "0000-00-00"
+                "song_role": {
+                    "id": 1,
+                    "code": "OP",
+                    "name": "オープニングテーマ"
+                },
+                "singer": {
+                    "id": 3363,
+                    "name": "いとうかなこ"
+                }
             },
             {
                 "id": 23829,
                 "title": "Fake Verthandi",
                 "anisoninfo_song_id": 70994,
-                "released_on": "0000-00-00"
+                "song_role": {
+                    "id": 2,
+                    "code": "ED",
+                    "name": "エンディングテーマ"
+                },
+                "singer": {
+                    "id": 6,
+                    "name": "(インストゥルメンタル)"
+                }
             },
             {
                 "id": 23828,
                 "title": "スカイクラッドの観測者",
                 "anisoninfo_song_id": 59464,
-                "released_on": "0000-00-00"
+                "song_role": {
+                    "id": 2,
+                    "code": "ED",
+                    "name": "エンディングテーマ"
+                },
+                "singer": {
+                    "id": 3363,
+                    "name": "いとうかなこ"
+                }
             },
             {
                 "id": 23830,
                 "title": "Another Heaven",
                 "anisoninfo_song_id": 59608,
-                "released_on": "0000-00-00"
+                "song_role": {
+                    "id": 2,
+                    "code": "ED",
+                    "name": "エンディングテーマ"
+                },
+                "singer": {
+                    "id": 3363,
+                    "name": "いとうかなこ"
+                }
             },
             {
                 "id": 23827,
                 "title": "刻司ル十二ノ盟約",
                 "anisoninfo_song_id": 67989,
-                "released_on": "0000-00-00"
+                "song_role": {
+                    "id": 2,
+                    "code": "ED",
+                    "name": "エンディングテーマ"
+                },
+                "singer": {
+                    "id": 4958,
+                    "name": "ファンタズム"
+                }
             }
         ]
     }
