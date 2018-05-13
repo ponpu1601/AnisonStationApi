@@ -22,6 +22,9 @@ v1では認証は行わない
 |GET|`/Api/v1/programs`|なし|直近で登録された番組データを200件応答する|
 |GET|`/Api/v1/programs`|title=`{任意の文字列}`|パラメータで渡された任意の文字列が、titleに関連するデータ4つのいずれかと部分一致する番組データを応答する|
 |GET|`/Api/v1/programs/{id}`|なし|該当するidの番組データと付随する楽曲データを応答する|
+|GET|`/Api/v1/programs/tvanimes/{year}`|なし|該当する年に放送開始したTVアニメ一覧を応答する|
+|GET|`/Api/v1/programs/tvanimes/{year}/{season_id}`|なし|該当するクールに放送開始したTVアニメ一覧を応答する。season_idは1:冬、2.春、3.夏、4.秋|
+
 
 ###GET `/Api/v1/programs`
 
@@ -218,6 +221,83 @@ $ curl http://2ndrelaypumpstation.net/Api/v1/programs/7590
             }
         ]
     }
+]
+
+```
+
+###GET　/Api/v1/programs/tvanimes/{year}
+
+####Response例
+```json
+$ curl http://2ndrelaypumpstation.net/Api/v1/tvanimes/2017
+[
+    {
+        "id": 151,
+        "title": "ID-0",
+        "kana_title": "アイディーゼロ",
+        "other_title_01": "",
+        "other_title_02": "",
+        "anisoninfo_program_id": 20170,
+        "broadcast_start_on": "2017-04-09",
+        "program_type": {
+            "id": 2,
+            "code": "TV",
+            "name": "テレビアニメーション"
+        }
+    },
+    {
+        "id": 176,
+        "title": "アイドル事変",
+        "kana_title": "アイドルジヘン",
+        "other_title_01": "Idol Incidents",
+        "other_title_02": "アイドルインシデンツ",
+        "anisoninfo_program_id": 19800,
+        "broadcast_start_on": "2017-01-08",
+        "program_type": {
+            "id": 2,
+            "code": "TV",
+            "name": "テレビアニメーション"
+        }
+    },
+    //省略
+]
+
+```
+###GET　/Api/v1/programs/tvanimes/{year}/{season_id}
+
+####Response例
+```json
+$ curl http://2ndrelaypumpstation.net/Api/v1/programs/2018/1
+[
+    {
+        "id": 165,
+        "title": "アイドリッシュセブン",
+        "kana_title": "アイドリッシュセブン",
+        "other_title_01": "IDOLiSH7",
+        "other_title_02": "アイドリッシュセブン",
+        "anisoninfo_program_id": 20745,
+        "broadcast_start_on": "2018-01-01",
+        "program_type": {
+            "id": 2,
+            "code": "TV",
+            "name": "テレビアニメーション"
+        }
+    },
+    {
+        "id": 1415,
+        "title": "伊藤潤二『コレクション』",
+        "kana_title": "イトウジュンジコレクション",
+        "other_title_01": "",
+        "other_title_02": "",
+        "anisoninfo_program_id": 20829,
+        "broadcast_start_on": "2018-01-05",
+        "program_type": {
+            "id": 2,
+            "code": "TV",
+            "name": "テレビアニメーション"
+        }
+    },
+    //省略
 ]
 
 ```
