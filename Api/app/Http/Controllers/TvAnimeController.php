@@ -36,9 +36,7 @@ class TvAnimeController extends Controller
         }
 
         $from = $year.$season_range['from'];
-        echo ($from);
         $to = $year.$season_range['to'];
-        echo ($to);
         $programs=$this->fetchByBroadcastOnRange($from,$to);
         return $this->respondWithJson($programs);
     }
