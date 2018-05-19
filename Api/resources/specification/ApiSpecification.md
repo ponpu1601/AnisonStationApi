@@ -24,7 +24,9 @@ v1では認証は行わない
 |GET|`/Api/v1/programs/{id}`|なし|該当するidの番組データと付随する楽曲データを応答する|
 |GET|`/Api/v1/programs/tvanimes/{year}`|なし|該当する年に放送開始したTVアニメ一覧を応答する|
 |GET|`/Api/v1/programs/tvanimes/{year}/{season_id}`|なし|該当するクールに放送開始したTVアニメ一覧を応答する。season_idは1:冬、2.春、3.夏、4.秋|
-
+|GET|`/Api/v1/songs`|なし|直近で登録された楽曲データを200件応答する|
+|GET|`/Api/v1/songs`|title=`{任意の文字列}`|パラメータで渡された任意の文字列が、titleと部分一致する番組データを10000件まで応答する|
+|GET|`/Api/v1/songs/{id}`|なし|該当するidの楽曲データを応答する|
 
 ###GET `/Api/v1/programs`
 
@@ -302,6 +304,177 @@ $ curl http://2ndrelaypumpstation.net/Api/v1/programs/2018/1
 
 ```
 
+
+###GET `/Api/v1/songs`
+
+####Response例
+```json
+$ curl http://2ndrelaypumpstation.net/Api/v1/songs
+
+[
+    {
+        "id": 18027,
+        "title": "キミガタメ Re:boot",
+        "anisoninfo_song_id": 112650,
+        "program": {
+            "id": 1882,
+            "title": "うたわれるもの~散りゆく者への子守唄~",
+            "kana_title": "ウタワレルモノチリユクモノヘノコモリウタ",
+            "other_title_01": "",
+            "other_title_02": "",
+            "anisoninfo_program_id": 8352,
+            "broadcast_start_on": "2006-10-26",
+            "program_type": {
+                "id": 3,
+                "code": "GM",
+                "name": "ゲーム"
+            }
+        },
+        "song_role": {
+            "id": 2,
+            "code": "ED",
+            "name": "エンディングテーマ"
+        },
+        "singer": {
+            "id": 3715,
+            "name": "Suara"
+        }
+    },
+    {
+        "id": 18025,
+        "title": "君だけの旅路 Re:boot",
+        "anisoninfo_song_id": 112649,
+        "program": {
+            "id": 1882,
+            "title": "うたわれるもの~散りゆく者への子守唄~",
+            "kana_title": "ウタワレルモノチリユクモノヘノコモリウタ",
+            "other_title_01": "",
+            "other_title_02": "",
+            "anisoninfo_program_id": 8352,
+            "broadcast_start_on": "2006-10-26",
+            "program_type": {
+                "id": 3,
+                "code": "GM",
+                "name": "ゲーム"
+            }
+        },
+        "song_role": {
+            "id": 1,
+            "code": "OP",
+            "name": "オープニングテーマ"
+        },
+        "singer": {
+            "id": 3715,
+            "name": "Suara"
+        }
+    }
+    //省略
+]
+```
+
+###GET `/Api/v1/songs?title={任意の文字列}`
+
+####Response例
+```json
+$ curl http://2ndrelaypumpstation.net/Api/v1/songs?title=観測者
+
+[
+    {
+        "id": 22133,
+        "title": "スカイクラッドの観測者",
+        "anisoninfo_song_id": 59464,
+        "program": {
+            "id": 7591,
+            "title": "Steins;Gate",
+            "kana_title": "シュタインズゲート",
+            "other_title_01": "",
+            "other_title_02": "",
+            "anisoninfo_program_id": 11970,
+            "broadcast_start_on": "2009-10-15",
+            "program_type": {
+                "id": 3,
+                "code": "GM",
+                "name": "ゲーム"
+            }
+        },
+        "song_role": {
+            "id": 1,
+            "code": "OP",
+            "name": "オープニングテーマ"
+        },
+        "singer": {
+            "id": 3363,
+            "name": "いとうかなこ"
+        }
+    },
+    {
+        "id": 23828,
+        "title": "スカイクラッドの観測者",
+        "anisoninfo_song_id": 59464,
+        "program": {
+            "id": 7590,
+            "title": "Steins;Gate",
+            "kana_title": "シュタインズゲート",
+            "other_title_01": "",
+            "other_title_02": "",
+            "anisoninfo_program_id": 13401,
+            "broadcast_start_on": "2011-04-06",
+            "program_type": {
+                "id": 2,
+                "code": "TV",
+                "name": "テレビアニメーション"
+            }
+        },
+        "song_role": {
+            "id": 2,
+            "code": "ED",
+            "name": "エンディングテーマ"
+        },
+        "singer": {
+            "id": 3363,
+            "name": "いとうかなこ"
+        }
+    }
+]
+```
+
+
+###GET `/Api/v1/songs/{id}
+
+####Response例
+```json
+$ curl http://2ndrelaypumpstation.net/Api/v1/songs/22133
+[
+    {
+        "id": 22133,
+        "title": "スカイクラッドの観測者",
+        "anisoninfo_song_id": 59464,
+        "program": {
+            "id": 7591,
+            "title": "Steins;Gate",
+            "kana_title": "シュタインズゲート",
+            "other_title_01": "",
+            "other_title_02": "",
+            "anisoninfo_program_id": 11970,
+            "broadcast_start_on": "2009-10-15",
+            "program_type": {
+                "id": 3,
+                "code": "GM",
+                "name": "ゲーム"
+            }
+        },
+        "song_role": {
+            "id": 1,
+            "code": "OP",
+            "name": "オープニングテーマ"
+        },
+        "singer": {
+            "id": 3363,
+            "name": "いとうかなこ"
+        }
+    }
+]
+```
 
 ###各データ構造
 ####program
