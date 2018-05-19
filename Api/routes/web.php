@@ -17,6 +17,8 @@ $router->get('/', function () use ($router) {
     echo $parser->parse($readme);
 });
 
+//$router->get('/info', 'PhpInfoController@show');
+
 $router->get('/programs/tvanimes/{year}','TvAnimeController@showByYear');
 
 $router->get('/programs/tvanimes/{year}/{season_id}','TvAnimeController@showByCour');
@@ -25,6 +27,7 @@ $router->get('/programs', 'ProgramController@show');
 
 $router->get('/programs/{id}', 'ProgramController@showOne');
 
+$router->get('/songs', 'SongController@show');
 
-$router->get('/info', 'PhpInfoController@show');
+$router->get('/songs/{id}', 'SongController@showOne');
 
