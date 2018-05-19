@@ -43,7 +43,7 @@ class Song extends Model
 
     public function program()
     {
-	    return $this->belongsTo('App\Program','program_id','id');
+	    return $this->belongsTo('App\Program','program_id','id')->with('program_type');
     }
 
 }
