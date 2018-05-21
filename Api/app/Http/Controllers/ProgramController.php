@@ -53,8 +53,7 @@ class ProgramController extends Controller
     public function showOne($id)
     {
         $program=Program::with('program_type','game_genre','songs')
-                  ->where('id',$id)
-                  ->get();
+                  ->find($id);
                   
         return $this->respondWithJson($program);
     }

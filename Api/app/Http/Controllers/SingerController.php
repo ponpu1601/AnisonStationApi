@@ -31,14 +31,13 @@ class SingerController extends Controller
     {
         return Singer::where('name','LIKE',"%$name%")
                 ->take(10000)
-                ->get(); 
+                ->get();
     }
 
     public function showOne($id)
     {
         $singer=Singer::with('songs')
-                  ->where('id',$id)
-                  ->get();
+                  ->find($id);
                   
         return $this->respondWithJson($singer);
     }

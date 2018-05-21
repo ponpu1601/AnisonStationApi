@@ -48,8 +48,7 @@ class SongController extends Controller
     public function showOne($id)
     {
         $song=Song::with('program','song_role','singer')
-                  ->where('id',$id)
-                  ->get();
+                  ->find($id);
                   
         return $this->respondWithJson($song);
     }
