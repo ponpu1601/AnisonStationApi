@@ -12,4 +12,9 @@ class Singer extends Model
     public $timestamps = false;
 
     protected $hidden = array('created_at','updated_at');
+
+    public function songs()
+    {
+	    return $this->hasMany('App\Song','singer_id','id')->with('song_role','program');
+    }
 }

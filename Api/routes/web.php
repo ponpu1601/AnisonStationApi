@@ -31,3 +31,6 @@ $router->get('/songs', 'SongController@show');
 
 $router->get('/songs/{id}', 'SongController@showOne');
 
+$router->get('/singers', 'SingerController@show');
+
+$router->get('/singers/{id}', 'SingerController@showOne');
