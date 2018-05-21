@@ -134,102 +134,102 @@ $ curl http://2ndrelaypumpstation.net/Api/v1/programs?title=steins
 ####Response例
 ```json
 $ curl http://2ndrelaypumpstation.net/Api/v1/programs/7590
-[
-    {
-        "id": 7590,
-        "title": "Steins;Gate",
-        "kana_title": "シュタインズゲート",
-        "other_title_01": "",
-        "other_title_02": "",
-        "anisoninfo_program_id": 13401,
-        "broadcast_start_on": "2011-04-06",
-        "program_type": {
-            "id": 2,
-            "code": "TV",
-            "name": "テレビアニメーション"
-        },
-        "game_genre": {
-            "id": 1,
-            "name": ""
-        },
-        "songs": [
-            {
-                "id": 23825,
-                "title": "Hacking to the Gate",
-                "anisoninfo_song_id": 67986,
-                "song_role": {
-                    "id": 1,
-                    "code": "OP",
-                    "name": "オープニングテーマ"
-                },
-                "singer": {
-                    "id": 3363,
-                    "name": "いとうかなこ"
-                }
+
+{
+    "id": 7590,
+    "title": "Steins;Gate",
+    "kana_title": "シュタインズゲート",
+    "other_title_01": "",
+    "other_title_02": "",
+    "anisoninfo_program_id": 13401,
+    "broadcast_start_on": "2011-04-06",
+    "program_type": {
+        "id": 2,
+        "code": "TV",
+        "name": "テレビアニメーション"
+    },
+    "game_genre": {
+        "id": 1,
+        "name": ""
+    },
+    "songs": [
+        {
+            "id": 23825,
+            "title": "Hacking to the Gate",
+            "anisoninfo_song_id": 67986,
+            "song_role": {
+                "id": 1,
+                "code": "OP",
+                "name": "オープニングテーマ"
             },
-            {
-                "id": 23829,
-                "title": "Fake Verthandi",
-                "anisoninfo_song_id": 70994,
-                "song_role": {
-                    "id": 2,
-                    "code": "ED",
-                    "name": "エンディングテーマ"
-                },
-                "singer": {
-                    "id": 6,
-                    "name": "(インストゥルメンタル)"
-                }
-            },
-            {
-                "id": 23828,
-                "title": "スカイクラッドの観測者",
-                "anisoninfo_song_id": 59464,
-                "song_role": {
-                    "id": 2,
-                    "code": "ED",
-                    "name": "エンディングテーマ"
-                },
-                "singer": {
-                    "id": 3363,
-                    "name": "いとうかなこ"
-                }
-            },
-            {
-                "id": 23830,
-                "title": "Another Heaven",
-                "anisoninfo_song_id": 59608,
-                "song_role": {
-                    "id": 2,
-                    "code": "ED",
-                    "name": "エンディングテーマ"
-                },
-                "singer": {
-                    "id": 3363,
-                    "name": "いとうかなこ"
-                }
-            },
-            {
-                "id": 23827,
-                "title": "刻司ル十二ノ盟約",
-                "anisoninfo_song_id": 67989,
-                "song_role": {
-                    "id": 2,
-                    "code": "ED",
-                    "name": "エンディングテーマ"
-                },
-                "singer": {
-                    "id": 4958,
-                    "name": "ファンタズム"
-                }
+            "singer": {
+                "id": 3363,
+                "name": "いとうかなこ"
             }
-        ]
-    }
-]
+        },
+        {
+            "id": 23829,
+            "title": "Fake Verthandi",
+            "anisoninfo_song_id": 70994,
+            "song_role": {
+                "id": 2,
+                "code": "ED",
+                "name": "エンディングテーマ"
+            },
+            "singer": {
+                "id": 6,
+                "name": "(インストゥルメンタル)"
+            }
+        },
+        {
+            "id": 23828,
+            "title": "スカイクラッドの観測者",
+            "anisoninfo_song_id": 59464,
+            "song_role": {
+                "id": 2,
+                "code": "ED",
+                "name": "エンディングテーマ"
+            },
+            "singer": {
+                "id": 3363,
+                "name": "いとうかなこ"
+            }
+        },
+        {
+            "id": 23830,
+            "title": "Another Heaven",
+            "anisoninfo_song_id": 59608,
+            "song_role": {
+                "id": 2,
+                "code": "ED",
+                "name": "エンディングテーマ"
+            },
+            "singer": {
+                "id": 3363,
+                "name": "いとうかなこ"
+            }
+        },
+        {
+            "id": 23827,
+            "title": "刻司ル十二ノ盟約",
+            "anisoninfo_song_id": 67989,
+            "song_role": {
+                "id": 2,
+                "code": "ED",
+                "name": "エンディングテーマ"
+            },
+            "singer": {
+                "id": 4958,
+                "name": "ファンタズム"
+            }
+        }
+    ]
+}
+
 
 ```
 
-###GET　/Api/v1/programs/tvanimes/{year}
+###GET　`/Api/v1/programs/tvanimes/{year}`
 
 ####Response例
 ```json
@@ -267,7 +267,7 @@ $ curl http://2ndrelaypumpstation.net/Api/v1/tvanimes/2017
 ]
 
 ```
-###GET　/Api/v1/programs/tvanimes/{year}/{season_id}
+###GET　`/Api/v1/programs/tvanimes/{year}/{season_id}`
 
 ####Response例
 ```json
@@ -441,41 +441,41 @@ $ curl http://2ndrelaypumpstation.net/Api/v1/songs?title=観測者
 ```
 
 
-###GET `/Api/v1/songs/{id}
+###GET `/Api/v1/songs/{id}`
 
 ####Response例
 ```json
 $ curl http://2ndrelaypumpstation.net/Api/v1/songs/22133
-[
-    {
-        "id": 22133,
-        "title": "スカイクラッドの観測者",
-        "anisoninfo_song_id": 59464,
-        "program": {
-            "id": 7591,
-            "title": "Steins;Gate",
-            "kana_title": "シュタインズゲート",
-            "other_title_01": "",
-            "other_title_02": "",
-            "anisoninfo_program_id": 11970,
-            "broadcast_start_on": "2009-10-15",
-            "program_type": {
-                "id": 3,
-                "code": "GM",
-                "name": "ゲーム"
-            }
-        },
-        "song_role": {
-            "id": 1,
-            "code": "OP",
-            "name": "オープニングテーマ"
-        },
-        "singer": {
-            "id": 3363,
-            "name": "いとうかなこ"
+
+{
+    "id": 22133,
+    "title": "スカイクラッドの観測者",
+    "anisoninfo_song_id": 59464,
+    "program": {
+        "id": 7591,
+        "title": "Steins;Gate",
+        "kana_title": "シュタインズゲート",
+        "other_title_01": "",
+        "other_title_02": "",
+        "anisoninfo_program_id": 11970,
+        "broadcast_start_on": "2009-10-15",
+        "program_type": {
+            "id": 3,
+            "code": "GM",
+            "name": "ゲーム"
         }
+    },
+    "song_role": {
+        "id": 1,
+        "code": "OP",
+        "name": "オープニングテーマ"
+    },
+    "singer": {
+        "id": 3363,
+        "name": "いとうかなこ"
     }
-]
+}
+
 ```
 
 
@@ -514,70 +514,70 @@ $ curl http://2ndrelaypumpstation.net/Api/v1/singers?name=いとうかなこ
 
 ```
 
-###GET `/Api/v1/singers?name={任意の文字列}`
+###GET `/Api/v1/singers/{id}`
 
 ####Response例
 ```json
 
 $ curl http://2ndrelaypumpstation.net/Api/v1/singers/3363
 
-[
-    {
-        "id": 3363,
-        "name": "いとうかなこ",
-        "songs": [
-            {
-                "id": 13249,
-                "title": "青い記憶",
-                "anisoninfo_song_id": 25127,
-                "song_role": {
-                    "id": 1,
-                    "code": "OP",
-                    "name": "オープニングテーマ"
-                },
-                "program": {
-                    "id": 13794,
-                    "title": "Hello, world",
-                    "kana_title": "ハローワールド",
-                    "other_title_01": "",
-                    "other_title_02": "",
-                    "anisoninfo_program_id": 4773,
-                    "broadcast_start_on": "2002-09-27",
-                    "program_type": {
-                        "id": 3,
-                        "code": "GM",
-                        "name": "ゲーム"
-                    }
-                }
+
+{
+    "id": 3363,
+    "name": "いとうかなこ",
+    "songs": [
+        {
+            "id": 13249,
+            "title": "青い記憶",
+            "anisoninfo_song_id": 25127,
+            "song_role": {
+                "id": 1,
+                "code": "OP",
+                "name": "オープニングテーマ"
             },
-            {
-                "id": 13251,
-                "title": "煌星",
-                "anisoninfo_song_id": 25129,
-                "song_role": {
-                    "id": 2,
-                    "code": "ED",
-                    "name": "エンディングテーマ"
-                },
-                "program": {
-                    "id": 13794,
-                    "title": "Hello, world",
-                    "kana_title": "ハローワールド",
-                    "other_title_01": "",
-                    "other_title_02": "",
-                    "anisoninfo_program_id": 4773,
-                    "broadcast_start_on": "2002-09-27",
-                    "program_type": {
-                        "id": 3,
-                        "code": "GM",
-                        "name": "ゲーム"
-                    }
+            "program": {
+                "id": 13794,
+                "title": "Hello, world",
+                "kana_title": "ハローワールド",
+                "other_title_01": "",
+                "other_title_02": "",
+                "anisoninfo_program_id": 4773,
+                "broadcast_start_on": "2002-09-27",
+                "program_type": {
+                    "id": 3,
+                    "code": "GM",
+                    "name": "ゲーム"
                 }
             }
-            //省略
-        ]
-    }
-]
+        },
+        {
+            "id": 13251,
+            "title": "煌星",
+            "anisoninfo_song_id": 25129,
+            "song_role": {
+                "id": 2,
+                "code": "ED",
+                "name": "エンディングテーマ"
+            },
+            "program": {
+                "id": 13794,
+                "title": "Hello, world",
+                "kana_title": "ハローワールド",
+                "other_title_01": "",
+                "other_title_02": "",
+                "anisoninfo_program_id": 4773,
+                "broadcast_start_on": "2002-09-27",
+                "program_type": {
+                    "id": 3,
+                    "code": "GM",
+                    "name": "ゲーム"
+                }
+            }
+        }
+        //省略
+    ]
+}
+
 
 
 ```
