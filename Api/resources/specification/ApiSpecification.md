@@ -25,8 +25,10 @@ v1では認証は行わない
 |GET|`/Api/v1/programs/tvanimes/{year}`|なし|該当する年に放送開始したTVアニメ一覧を応答する|
 |GET|`/Api/v1/programs/tvanimes/{year}/{season_id}`|なし|該当するクールに放送開始したTVアニメ一覧を応答する。season_idは1:冬、2.春、3.夏、4.秋|
 |GET|`/Api/v1/songs`|なし|直近で登録された楽曲データを200件応答する|
-|GET|`/Api/v1/songs`|title=`{任意の文字列}`|パラメータで渡された任意の文字列が、titleと部分一致する番組データを10000件まで応答する|
+|GET|`/Api/v1/songs`|title=`{任意の文字列}`|パラメータで渡された任意の文字列が、titleと部分一致する楽曲データを10000件まで応答する|
 |GET|`/Api/v1/songs/{id}`|なし|該当するidの楽曲データを応答する|
+|GET|`/Api/v1/singers`|name=`{任意の文字列}`|パラメータで渡された任意の文字列が、nameと部分一致する歌手データを応答する|
+|GET|`/Api/v1/singers/{id}`|なし|該当するidの歌手データと楽曲データを応答する|
 
 ###GET `/Api/v1/programs`
 
@@ -475,6 +477,111 @@ $ curl http://2ndrelaypumpstation.net/Api/v1/songs/22133
     }
 ]
 ```
+
+
+###GET `/Api/v1/singers?name={任意の文字列}`
+
+####Response例
+```json
+
+$ curl http://2ndrelaypumpstation.net/Api/v1/singers?name=いとうかなこ
+[
+    {
+        "id": 3363,
+        "name": "いとうかなこ"
+    },
+    {
+        "id": 7535,
+        "name": "栗林みな実,rino,yozuca*,いとうかなこ,マヨちゃん,ジョイまっくす"
+    },
+    {
+        "id": 7552,
+        "name": "いとうかなこ,ZIZZ"
+    },
+    {
+        "id": 8507,
+        "name": "いとうかなこ,Zwei"
+    },
+    {
+        "id": 8614,
+        "name": "彩音,いとうかなこ"
+    },
+    {
+        "id": 8769,
+        "name": "いとうかなこ,ワタナベカズヒロ"
+    }
+]
+
+```
+
+###GET `/Api/v1/singers?name={任意の文字列}`
+
+####Response例
+```json
+
+$ curl http://2ndrelaypumpstation.net/Api/v1/singers/3363
+
+[
+    {
+        "id": 3363,
+        "name": "いとうかなこ",
+        "songs": [
+            {
+                "id": 13249,
+                "title": "青い記憶",
+                "anisoninfo_song_id": 25127,
+                "song_role": {
+                    "id": 1,
+                    "code": "OP",
+                    "name": "オープニングテーマ"
+                },
+                "program": {
+                    "id": 13794,
+                    "title": "Hello, world",
+                    "kana_title": "ハローワールド",
+                    "other_title_01": "",
+                    "other_title_02": "",
+                    "anisoninfo_program_id": 4773,
+                    "broadcast_start_on": "2002-09-27",
+                    "program_type": {
+                        "id": 3,
+                        "code": "GM",
+                        "name": "ゲーム"
+                    }
+                }
+            },
+            {
+                "id": 13251,
+                "title": "煌星",
+                "anisoninfo_song_id": 25129,
+                "song_role": {
+                    "id": 2,
+                    "code": "ED",
+                    "name": "エンディングテーマ"
+                },
+                "program": {
+                    "id": 13794,
+                    "title": "Hello, world",
+                    "kana_title": "ハローワールド",
+                    "other_title_01": "",
+                    "other_title_02": "",
+                    "anisoninfo_program_id": 4773,
+                    "broadcast_start_on": "2002-09-27",
+                    "program_type": {
+                        "id": 3,
+                        "code": "GM",
+                        "name": "ゲーム"
+                    }
+                }
+            }
+            //省略
+        ]
+    }
+]
+
+
+```
+
 
 ###各データ構造
 ####program
