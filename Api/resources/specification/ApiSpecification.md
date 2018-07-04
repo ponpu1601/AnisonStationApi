@@ -1,21 +1,21 @@
-#AnisonStationApiについて
+# AnisonStationApiについて
 
-##API使用上の注意
-###本API公開に当たって、[AnisonGeneration様](http://anison.info/ "AnisonGeneration")が公開されている[csvデータ](http://anison.info/data/download.html)を使用しています。
+## API使用上の注意
+### 本API公開に当たって、[AnisonGeneration様](http://anison.info/ "AnisonGeneration")が公開されている[csvデータ](http://anison.info/data/download.html)を使用しています。
 - 本APIのデータの二次利用につきましてはAnisonGeneration様の規約に従ってご利用ください。
 - AnisonGeneration様では、各種データを募集しています。ユーザー登録をすることで、各データの追加をすることができます。
 - データに誤りがある場合は、[AnisonGeneration様情報修正掲示板](http://bbs.anison.info/)へご連絡ください。
 
 
-##APIリファレンス
-###Endpoint
-####**`http://2ndrelaypumpstation.net/Api/v1`**
+## APIリファレンス
+### Endpoint
+#### **`http://2ndrelaypumpstation.net/Api/v1`**
 
-###認証
+### 認証
 v1では認証は行わない
 
 
-###API仕様概要
+### API仕様概要
 |httpメソッド|URL|パラメータ|Response内容
 |-|-|-|-|
 |GET|`/Api/v1`|なし|READMEを応答する|
@@ -30,9 +30,9 @@ v1では認証は行わない
 |GET|`/Api/v1/singers`|name=`{任意の文字列}`|パラメータで渡された任意の文字列が、nameと部分一致する歌手データを応答する|
 |GET|`/Api/v1/singers/{id}`|なし|該当するidの歌手データと楽曲データを応答する|
 
-###GET `/Api/v1/programs`
+### GET `/Api/v1/programs`
 
-####Response例
+#### Response例
 ```json
 
 $ curl http://2ndrelaypumpstation.net/Api/v1/programs
@@ -79,9 +79,9 @@ $ curl http://2ndrelaypumpstation.net/Api/v1/programs
 ]
 ```
 
-###GET `/Api/v1/programs?title=任意の文字列`
+### GET `/Api/v1/programs?title=任意の文字列`
 
-####Response例
+#### Response例
 
 ```json
 $ curl http://2ndrelaypumpstation.net/Api/v1/programs?title=steins
@@ -129,9 +129,9 @@ $ curl http://2ndrelaypumpstation.net/Api/v1/programs?title=steins
 
 ```
 
-###GET `/Api/v1/programs/{id}`
+### GET `/Api/v1/programs/{id}`
 
-####Response例
+#### Response例
 ```json
 $ curl http://2ndrelaypumpstation.net/Api/v1/programs/7590
 
@@ -229,9 +229,9 @@ $ curl http://2ndrelaypumpstation.net/Api/v1/programs/7590
 
 ```
 
-###GET　`/Api/v1/programs/tvanimes/{year}`
+### GET　`/Api/v1/programs/tvanimes/{year}`
 
-####Response例
+#### Response例
 ```json
 $ curl http://2ndrelaypumpstation.net/Api/v1/tvanimes/2017
 [
@@ -267,9 +267,9 @@ $ curl http://2ndrelaypumpstation.net/Api/v1/tvanimes/2017
 ]
 
 ```
-###GET　`/Api/v1/programs/tvanimes/{year}/{season_id}`
+### GET　`/Api/v1/programs/tvanimes/{year}/{season_id}`
 
-####Response例
+#### Response例
 ```json
 $ curl http://2ndrelaypumpstation.net/Api/v1/programs/2018/1
 [
@@ -307,9 +307,9 @@ $ curl http://2ndrelaypumpstation.net/Api/v1/programs/2018/1
 ```
 
 
-###GET `/Api/v1/songs`
+### GET `/Api/v1/songs`
 
-####Response例
+#### Response例
 ```json
 $ curl http://2ndrelaypumpstation.net/Api/v1/songs
 
@@ -374,9 +374,9 @@ $ curl http://2ndrelaypumpstation.net/Api/v1/songs
 ]
 ```
 
-###GET `/Api/v1/songs?title={任意の文字列}`
+### GET `/Api/v1/songs?title={任意の文字列}`
 
-####Response例
+#### Response例
 ```json
 $ curl http://2ndrelaypumpstation.net/Api/v1/songs?title=観測者
 
@@ -441,9 +441,9 @@ $ curl http://2ndrelaypumpstation.net/Api/v1/songs?title=観測者
 ```
 
 
-###GET `/Api/v1/songs/{id}`
+### GET `/Api/v1/songs/{id}`
 
-####Response例
+#### Response例
 ```json
 $ curl http://2ndrelaypumpstation.net/Api/v1/songs/22133
 
@@ -479,9 +479,9 @@ $ curl http://2ndrelaypumpstation.net/Api/v1/songs/22133
 ```
 
 
-###GET `/Api/v1/singers?name={任意の文字列}`
+### GET `/Api/v1/singers?name={任意の文字列}`
 
-####Response例
+#### Response例
 ```json
 
 $ curl http://2ndrelaypumpstation.net/Api/v1/singers?name=いとうかなこ
@@ -514,9 +514,9 @@ $ curl http://2ndrelaypumpstation.net/Api/v1/singers?name=いとうかなこ
 
 ```
 
-###GET `/Api/v1/singers/{id}`
+### GET `/Api/v1/singers/{id}`
 
-####Response例
+#### Response例
 ```json
 
 $ curl http://2ndrelaypumpstation.net/Api/v1/singers/3363
@@ -583,14 +583,14 @@ $ curl http://2ndrelaypumpstation.net/Api/v1/singers/3363
 ```
 
 
-###各データ構造
-####program
+### 各データ構造
+#### program
 
-#####概要
+##### 概要
 - 番組データ
 - ゲームや劇場版等の情報もある
 
-#####Model
+##### Model
 |Property|Value|description|Sample
 |-|-|-|-|
 id|Number|program_id|7590
@@ -603,11 +603,11 @@ broadcast_start_on|Date|放送開始年月日(yyyy-MM-dd)ゲームの場合は�
 program_type|program_type|番組種別|{"id":2,"code":"TV","name":"テレビアニメーション"}|
 game_genre|game_genre|ゲームのジャンル種別|{"id":1,"name":""}|
 
-####program_type
-#####概要
+#### program_type
+##### 概要
 - 番組種別（TVアニメーション、ゲーム、劇場版など）
 
-#####Model
+##### Model
 |Property|Value|description|Sample
 |-|-|-|-|
 id|Number|program_type_id|2
@@ -615,22 +615,22 @@ code|string|番組種別コード|TV
 name|string|番組種別名称|テレビアニメーション
 
 
-####game_genre
-#####概要
+#### game_genre
+##### 概要
 - ゲームのジャンル種別（RPG、アクション、アドベンチャーなど）
 - 番組種別がゲームでない場合は該当なしのデータが入る
 
-#####Model
+##### Model
 |Property|Value|description|Sample
 |-|-|-|-|
 id|Number|game_genre_id|6
 name|string|ゲームジャンル名称|アドベンチャー
 
-####song
-#####概要
+#### song
+##### 概要
 - 楽曲データ
 
-#####Model
+##### Model
 |Property|Value|description|Sample
 |-|-|-|-|
 id|Number|song_id|23825
@@ -640,21 +640,21 @@ singer|singer|歌手データ|{"id":3363,"name":"いとうかなこ"}|
 program|program|タイアップ番組のデータ|レスポンス例を参照のこと
 song_role|song_role|楽曲の役割(OP、EDなど)|{"id":1,"code":"OP","name":"オープニングテーマ"}|
 
-####singer
-#####概要
+#### singer
+##### 概要
 - 歌手データ
 
-#####Model
+##### Model
 |Property|Value|description|Sample
 |-|-|-|-|
 id|Number|song_id|3363
 name|string|歌手名|いとうかなこ|
 
-####song_role
-#####概要
+#### song_role
+##### 概要
 - 楽曲の役割種別データ
 
-#####Model
+##### Model
 |Property|Value|description|Sample
 |-|-|-|-|
 id|Number|song_id|1
